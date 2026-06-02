@@ -976,7 +976,9 @@
     <header id="moodboard-header">
         <div class="container header-flex">
             <div class="brand-info">
-                <h1 class="brand-name" id="header-brand-title">Aurelia</h1>
+                <div id="header-logo-container" style="display: flex; align-items: center; height: 48px; min-width: 150px;">
+                    <h1 class="brand-name" id="header-brand-title">Aurelia</h1>
+                </div>
                 <span class="sub">IMMOBILIEN BRANDING MOODBOARDS</span>
             </div>
             
@@ -1111,12 +1113,24 @@
             
             <div class="typography-card">
                 <div class="typo-grid">
-                    <div class="typo-specimen">
-                        <span class="typo-label">Überschriften (Title Font)</span>
-                        <h4 id="typo-title-font-name">Cormorant Garamond</h4>
-                        <div class="specimen-display">
-                            <span class="specimen-large" id="typo-specimen-large">Aa</span>
-                            <span class="specimen-alphabet" id="typo-specimen-alphabet">A B C D E F G H I J K L M N O P Q R S T U V W X Y Z<br>a b c d e f g h i j k l m n o p q r s t u v w x y z</span>
+                    <div class="typo-specimen" style="display: flex; flex-direction: column; gap: 24px;">
+                        <!-- Title Font Specimen -->
+                        <div class="typo-specimen-section">
+                            <span class="typo-label">Überschriften (Title Font)</span>
+                            <h4 id="typo-title-font-name">Cormorant Garamond</h4>
+                            <div class="specimen-display">
+                                <span class="specimen-large" id="typo-specimen-large">Aa</span>
+                                <span class="specimen-alphabet" id="typo-specimen-alphabet">A B C D E F G H I J K L M N O P Q R S T U V W X Y Z<br>a b c d e f g h i j k l m n o p q r s t u v w x y z</span>
+                            </div>
+                        </div>
+                        <!-- Body Font Specimen -->
+                        <div class="typo-specimen-section">
+                            <span class="typo-label">Fliesstext (Body Font)</span>
+                            <h4 id="typo-body-font-name">Inter</h4>
+                            <div class="specimen-display" style="font-family: var(--font-body);">
+                                <span class="specimen-large" id="typo-body-specimen-large" style="font-family: var(--font-body); font-size: 3.5rem; line-height: 1; color: var(--color-primary); font-style: normal; font-weight: 400; transition: color 0.6s ease;">Aa</span>
+                                <span class="specimen-alphabet" id="typo-body-specimen-alphabet" style="font-family: var(--font-body); font-weight: 300;">A B C D E F G H I J K L M N O P Q R S T U V W X Y Z<br>a b c d e f g h i j k l m n o p q r s t u v w x y z</span>
+                            </div>
                         </div>
                     </div>
                     <div class="typo-preview">
@@ -1202,7 +1216,7 @@
                     <span class="branding-category">Wortmarke & Slogan</span>
                     <h2 class="branding-name-large brand-name" id="brand-showcase-name">Aurelia</h2>
                     <div class="branding-slogan-line"></div>
-                    <p class="branding-slogan" id="brand-showcase-slogan">Ihr Logenplatz auf der Sonnenseite.</p>
+                    <p class="branding-slogan" id="brand-showcase-slogan">Aurelia – Ihr Logenplatz auf der Sonnenseite</p>
                 </div>
             </div>
         </section>
@@ -1231,9 +1245,11 @@
                 title: 'Aurelia',
                 lead: 'Kombination aus geölter Eiche, sandfarbenem mineralischem Putz und eloxierten Bronzedetails. Reduzierte und materialfokussierte Schweizer Ästhetik.',
                 brandName: 'Aurelia',
-                brandSlogan: 'Sonnenseitige Ausrichtung und natürliche Haptik.',
+                brandSlogan: 'Aurelia – Ihr Logenplatz auf der Sonnenseite',
                 tags: ['Stockwerkeigentum', 'Sonnige Terrassen', 'Echtholz geölt', 'Bronze-Details'],
                 titleFont: 'Cormorant Garamond',
+                bodyFont: 'Inter',
+                bodyFontFamily: "'Inter', sans-serif",
                 specimenLarge: 'Aa',
                 specimenAlphabet: 'A B C D E F G H I J K L M N O P Q R S T U V W X Y Z<br>a b c d e f g h i j k l m n o p q r s t u v w x y z',
                 previewHeadline: 'Sonnenseitig orientierte Wohnbereiche.',
@@ -1268,9 +1284,11 @@
                 title: 'Frenco',
                 lead: 'Kombination aus Sichtbeton, mineralischem Weissputz und kontrastierenden kupfer- und salbeifarbenen Akzenten. Klares, strukturelles Schweizer Design.',
                 brandName: 'Frenco',
-                brandSlogan: 'Kompakte Sichtbeton-Architektur und urbane Texturen.',
+                brandSlogan: 'Frenco – Das neue Herz an der Rheinstrasse',
                 tags: ['Urbane Konnektivität', '13 Min. nach Basel', 'Sichtbeton & Kalk', 'Zentrales Gliederungsprinzip'],
                 titleFont: 'Outfit',
+                bodyFont: 'Inter',
+                bodyFontFamily: "'Inter', sans-serif",
                 specimenLarge: 'Aa',
                 specimenAlphabet: 'A B C D E F G H I J K L M N O P Q R S T U V W X Y Z<br>a b c d e f g h i j k l m n o p q r s t u v w x y z',
                 previewHeadline: 'Direkte S-Bahn-Konnektivität.',
@@ -1305,9 +1323,11 @@
                 title: 'Rhenia',
                 lead: 'Kombination aus Muschelkalk-Sandstein, naturnahen Grastönen und dunklen Mokka-Holzstrukturen. Harmonische Integration des L-Winkel-Innenhofs.',
                 brandName: 'Rhenia',
-                brandSlogan: 'Naturnahe Hofoase mit Muschelkalk und Salbei.',
+                brandSlogan: 'Rhenia – Wo Freiraum und Leben fliessen',
                 tags: ['Fliessende Räume', 'Hofoase L-Winkel', 'Muschelkalk-Beläge', 'Tannengrün-Akzente'],
                 titleFont: 'Playfair Display',
+                bodyFont: 'Montserrat',
+                bodyFontFamily: "'Montserrat', sans-serif",
                 specimenLarge: 'Aa',
                 specimenAlphabet: 'A B C D E F G H I J K L M N O P Q R S T U V W X Y Z<br>a b c d e f g h i j k l m n o p q r s t u v w x y z',
                 previewHeadline: 'Direkter Bezug zum Landschaftsraum.',
@@ -1379,8 +1399,15 @@
             document.querySelectorAll('.brand-name').forEach(el => {
                 el.textContent = data.brandName;
             });
-            const headerBrandTitle = document.getElementById('header-brand-title');
-            if (headerBrandTitle) headerBrandTitle.textContent = data.brandName;
+            
+            const headerLogoContainer = document.getElementById('header-logo-container');
+            if (headerLogoContainer) {
+                if (brandName === 'AURELIA') {
+                    headerLogoContainer.innerHTML = `<img src="assets/logo_aurelia.svg" alt="Aurelia" class="brand-logo-img" style="height: 45px; width: auto; display: block; object-fit: contain;">`;
+                } else {
+                    headerLogoContainer.innerHTML = `<h1 class="brand-name" id="header-brand-title" style="margin: 0;">${data.brandName}</h1>`;
+                }
+            }
 
             // D. Update Color Swatches
             for (let i = 0; i < 6; i++) {
@@ -1413,12 +1440,14 @@
             const titleFontNameElement = document.getElementById('typo-title-font-name');
             const specimenLarge = document.getElementById('typo-specimen-large');
             const specimenAlphabet = document.getElementById('typo-specimen-alphabet');
+            const bodyFontNameElement = document.getElementById('typo-body-font-name');
             const previewHeadline = document.getElementById('typo-preview-headline');
             const previewParagraph = document.getElementById('typo-preview-paragraph');
 
             if (titleFontNameElement) titleFontNameElement.textContent = data.titleFont;
             if (specimenLarge) specimenLarge.textContent = data.specimenLarge;
             if (specimenAlphabet) specimenAlphabet.innerHTML = data.specimenAlphabet;
+            if (bodyFontNameElement) bodyFontNameElement.textContent = data.bodyFont;
             if (previewHeadline) previewHeadline.textContent = data.previewHeadline;
             if (previewParagraph) previewParagraph.textContent = data.previewParagraph;
 
