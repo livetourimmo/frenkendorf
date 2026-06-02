@@ -1,0 +1,2012 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interaktives Brand Moodboard — RHEINSTRASSE FRENKENDORF</title>
+    <meta name="description" content="Offizielles Farb- und Materialkonzept für das Neubauprojekt an der Rheinstrasse in Frenkendorf (STWE). Entdecken Sie die drei Markenrichtungen Aurelia, Frenco und Rhenia im interaktiven Vergleich.">
+    
+    <!-- Google Fonts & FontAwesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+            --transition-smooth: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --transition-quick: all 0.25s ease-out;
+            --box-shadow-soft: 0 10px 30px rgba(37, 26, 21, 0.02);
+            --box-shadow-medium: 0 20px 45px rgba(37, 26, 21, 0.05);
+        }
+
+        /* --- DYNAMISCHE SCHRIFT- UND FARB-UMSCHALTUNG VIA BODY-KLASSE --- */
+        
+        /* Variante 1: Aurelia (Quiet Luxury / Sonnenseite - Favorit) */
+        body.brand-aurelia {
+            --bg-page: #f7f4ef;               /* Sandstein Off-White */
+            --color-card-bg: #ffffff;
+            --color-border: rgba(92, 74, 66, 0.12);
+            --color-text-core: #251a15;       /* Espresso */
+            --color-text-light: #5c4a42;      /* Mokka */
+            
+            --color-primary: #b06548;         /* Aurelia Bronze */
+            --color-secondary: #5c4a42;       /* Mokka */
+            --color-accent: #a17163;          /* Terrakotta-Beige */
+            --color-accent-hover: #b06548;
+            --color-contrast: #251a15;        /* Espresso */
+            
+            --font-serif: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Inter', sans-serif;
+            --border-radius: 0px;             /* Kantige Form, abgeleitet aus L-Baukörper */
+            --font-title-style: normal;
+        }
+
+        /* Variante 2: Frenco (Modern Urban / Rheinstrasse) */
+        body.brand-frenco {
+            --bg-page: #f4f6f5;               /* Kalk-Hellgrau */
+            --color-card-bg: #ffffff;
+            --color-border: rgba(30, 34, 41, 0.12);
+            --color-text-core: #1e2229;       /* Graphit-Anthrazit */
+            --color-text-light: #4a5c4e;      /* Waldgrau */
+            
+            --color-primary: #d4957a;         /* Kupfer Hell */
+            --color-secondary: #4a5c4e;       /* Waldgrau */
+            --color-accent: #8ab396;          /* Salbei Hell */
+            --color-accent-hover: #5e8a69;
+            --color-contrast: #1e2229;        /* Graphit-Anthrazit */
+            
+            --font-serif: 'Outfit', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --border-radius: 4px;             /* Minimale Abrundung für cleanen skandinavischen Look */
+            --font-title-style: normal;
+        }
+
+        /* Variante 3: Rhenia (Organisch-Fliessend / Ergolz) */
+        body.brand-rhenia {
+            --bg-page: #e6ddcc;               /* Naturstein-Beige */
+            --color-card-bg: #f9f8f6;
+            --color-border: rgba(30, 58, 47, 0.12);
+            --color-text-core: #251a15;       /* Mokka-Dunkel */
+            --color-text-light: #5e8a69;      /* Salbeigrün */
+            
+            --color-primary: #1e3a2f;         /* Tiefgrün (Welcome Home) */
+            --color-secondary: #5e8a69;       /* Salbeigrün */
+            --color-accent: #a17163;          /* Terrakotta-Beige */
+            --color-accent-hover: #b06548;
+            --color-contrast: #1e3a2f;        /* Tiefgrün */
+            
+            --font-serif: 'Playfair Display', Georgia, serif;
+            --font-body: 'Montserrat', sans-serif;
+            --border-radius: 12px;            /* Fliessende, weiche Radien für organische Markenidee */
+            --font-title-style: italic;       /* Edler Italic-Touch für harmonischen Fluss */
+        }
+
+        /* Base styles */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-page);
+            color: var(--color-text-core);
+            line-height: 1.6;
+            padding-top: 100px;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            transition: background-color 0.6s cubic-bezier(0.25, 0.8, 0.25, 1), 
+                        color 0.6s ease,
+                        font-family 0.6s ease;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Global Headings */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-serif);
+            font-weight: 500;
+            color: var(--color-text-core);
+            transition: all 0.4s ease;
+        }
+
+        h1 {
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            line-height: 1.15;
+            font-weight: 300;
+        }
+
+        h2 {
+            font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+            line-height: 1.2;
+            font-weight: 400;
+        }
+
+        h3 {
+            font-size: clamp(1.3rem, 2vw, 1.8rem);
+        }
+
+        p {
+            font-size: 1.05rem;
+            color: var(--color-text-light);
+            font-weight: 300;
+            line-height: 1.7;
+            transition: color 0.4s ease;
+        }
+
+        /* Header mit Switcher */
+        #moodboard-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: center;
+        }
+
+        .header-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .brand-info h1 {
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+            font-family: var(--font-serif);
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .brand-info .sub {
+            font-size: 0.65rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--color-primary);
+            font-weight: 600;
+            display: block;
+            margin-top: 2px;
+            transition: color 0.4s ease;
+        }
+
+        .variant-switcher {
+            display: flex;
+            background-color: rgba(0, 0, 0, 0.03);
+            padding: 6px;
+            border-radius: 50px;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .header-switcher-btn {
+            background: none;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-family: var(--font-sans);
+            font-weight: 600;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--color-text-light);
+            transition: var(--transition-smooth);
+        }
+
+        .header-switcher-btn .num {
+            opacity: 0.5;
+            font-size: 0.75rem;
+        }
+
+        .header-switcher-btn:hover {
+            color: var(--color-text-core);
+        }
+
+        .header-switcher-btn.active {
+            background-color: var(--color-primary);
+            color: #ffffff !important;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .header-switcher-btn.active .num {
+            opacity: 0.8;
+        }
+
+        /* 1. Hero Section & Concept Card Selector Combined */
+        #mood-hero {
+            position: relative;
+            padding: 80px 0;
+            background-color: #1a1715;
+            color: #ffffff;
+            overflow: hidden;
+            margin-bottom: 60px;
+        }
+
+        .hero-bg-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(37, 26, 21, 0.2) 0%, rgba(20, 15, 12, 0.95) 100%);
+            z-index: 1;
+        }
+
+        .hero-wrapper {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--color-primary);
+            margin-bottom: 16px;
+            font-weight: 600;
+            transition: color 0.4s ease;
+        }
+
+        .hero-main-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            line-height: 1.2;
+            margin-bottom: 30px;
+            color: #ffffff;
+        }
+
+        .hero-main-title .text-accent {
+            color: var(--color-primary);
+            font-style: var(--font-title-style);
+            font-weight: 400;
+            transition: color 0.4s ease;
+        }
+
+        /* Combined Grid Layout */
+        .hero-content-grid {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 40px;
+            align-items: stretch;
+        }
+
+        /* Left Side: Visual & Intro Card (Glassmorphic) */
+        .hero-intro-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            transition: border-radius 0.6s ease;
+        }
+
+        .hero-visual-wrapper {
+            border-radius: calc(var(--border-radius) - 2px);
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            aspect-ratio: 16 / 10;
+            transition: border-radius 0.6s ease;
+        }
+
+        .hero-visual-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 6s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .hero-visual-wrapper:hover img {
+            transform: scale(1.04);
+        }
+
+        .hero-intro-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .hero-intro-text .badge {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--color-primary);
+            margin-bottom: 8px;
+            transition: color 0.4s ease;
+        }
+
+        .tag-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 14px;
+        }
+
+        .tag {
+            background-color: rgba(255, 255, 255, 0.08);
+            color: rgba(255, 255, 255, 0.9);
+            padding: 6px 12px;
+            font-size: 0.78rem;
+            font-weight: 500;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: var(--transition-smooth);
+        }
+
+        /* Right Side: Selector Column */
+        .hero-selector-column {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .selector-title {
+            font-size: 1.15rem;
+            margin-bottom: 16px;
+            letter-spacing: 1px;
+            color: rgba(255, 255, 255, 0.9);
+            font-family: var(--font-serif);
+        }
+
+        .concept-cards-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .concept-card {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            cursor: pointer;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            transition: var(--transition-smooth);
+        }
+
+        .concept-card:hover {
+            transform: translateY(-4px);
+            background: rgba(255, 255, 255, 0.07);
+            border-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+        }
+
+        .concept-card.active {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--color-primary);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .concept-card.active::before {
+            content: "";
+            position: absolute;
+            top: -1px;
+            left: -1px;
+            right: -1px;
+            bottom: -1px;
+            border: 2px solid var(--color-primary);
+            border-radius: var(--border-radius);
+            pointer-events: none;
+            transition: border-radius 0.6s ease;
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card-num {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--color-primary);
+            opacity: 0.8;
+            transition: color 0.4s ease;
+        }
+
+        .concept-card h4 {
+            font-size: 1.1rem;
+            color: #ffffff;
+            font-weight: 500;
+            font-family: var(--font-sans);
+        }
+
+        .card-desc {
+            font-size: 0.8rem;
+            line-height: 1.4;
+            color: rgba(255, 255, 255, 0.65);
+        }
+
+        .card-visuals {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 10px;
+            margin-top: 2px;
+        }
+
+        .card-colors {
+            display: flex;
+            gap: 6px;
+        }
+
+        .card-colors .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            display: block;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .card-font {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: rgba(255, 255, 255, 0.4);
+            font-weight: 500;
+        }
+
+        .card-status-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--color-primary);
+            font-weight: 600;
+            background: rgba(255, 255, 255, 0.08);
+            padding: 2px 6px;
+            border-radius: 50px;
+            transition: color 0.4s ease;
+        }
+
+        /* Sections */
+        .mood-section {
+            padding: 60px 0 30px;
+            border-bottom: 1px solid var(--color-border);
+            animation: fadeIn 0.8s ease-out;
+            transition: border-color 0.6s ease;
+        }
+
+        .mood-section:last-of-type {
+            border-bottom: none;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section-header {
+            margin-bottom: 35px;
+        }
+
+        .section-header h3 {
+            font-size: 1.8rem;
+            color: var(--color-primary);
+            margin-bottom: 8px;
+            transition: color 0.4s ease;
+        }
+
+        .section-header p {
+            font-size: 0.95rem;
+            color: var(--color-text-light);
+            font-weight: 300;
+        }
+
+        .badge {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--color-primary);
+            margin-bottom: 10px;
+            transition: color 0.4s ease;
+        }
+
+        /* Farbpalette Grid */
+        .colors-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .color-card {
+            background-color: var(--color-card-bg);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow-soft);
+            transition: var(--transition-smooth);
+            cursor: pointer;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .color-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--box-shadow-medium);
+            border-color: var(--color-primary);
+        }
+
+        .color-swatch {
+            height: 110px;
+            width: 100%;
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            padding: 12px;
+            transition: var(--transition-quick);
+        }
+
+        .color-hex-tag {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: #1f1f1f;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .color-info {
+            padding: 18px;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            flex-grow: 1;
+        }
+
+        .color-info .role {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--color-primary);
+            font-weight: 600;
+            margin-bottom: 1px;
+            display: block;
+            transition: color 0.4s ease;
+        }
+
+        .color-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--color-text-core);
+            line-height: 1.2;
+            transition: color 0.4s ease;
+        }
+
+        .color-desc {
+            font-size: 0.8rem;
+            line-height: 1.45;
+            color: var(--color-text-light);
+            margin: 2px 0 6px;
+            transition: color 0.4s ease;
+        }
+
+        .color-origin {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--color-text-light);
+            opacity: 0.6;
+            border-top: 1px solid var(--color-border);
+            padding-top: 10px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: auto;
+            transition: border-color 0.4s ease, color 0.4s ease;
+        }
+
+        /* Typografie Specimen */
+        .typography-card {
+            background-color: var(--color-card-bg);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius);
+            padding: 48px;
+            box-shadow: var(--box-shadow-soft);
+            transition: var(--transition-smooth);
+        }
+
+        .typo-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 64px;
+        }
+
+        .typo-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--color-primary);
+            font-weight: 600;
+            display: block;
+            margin-bottom: 16px;
+            transition: color 0.4s ease;
+        }
+
+        #typo-title-font-name {
+            font-size: 3rem;
+            font-weight: 500;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            font-family: var(--font-serif);
+            font-style: var(--font-title-style);
+            transition: font-family 0.6s ease, font-style 0.6s ease;
+        }
+
+        .specimen-display {
+            background-color: var(--bg-page);
+            border: 1px solid var(--color-border);
+            border-radius: 6px;
+            padding: 30px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            transition: background-color 0.6s ease, border-color 0.6s ease;
+        }
+
+        .specimen-large {
+            font-family: var(--font-serif);
+            font-size: 5rem;
+            line-height: 1;
+            color: var(--color-primary);
+            font-style: var(--font-title-style);
+            transition: color 0.6s ease, font-family 0.6s ease, font-style 0.6s ease;
+        }
+
+        .specimen-alphabet {
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            line-height: 1.8;
+            color: var(--color-text-light);
+            transition: color 0.4s ease;
+        }
+
+        .preview-headline {
+            font-family: var(--font-serif);
+            font-size: 2.2rem;
+            line-height: 1.2;
+            color: var(--color-text-core);
+            margin-bottom: 16px;
+            font-style: var(--font-title-style);
+            transition: font-family 0.6s ease, font-style 0.6s ease, color 0.4s ease;
+        }
+
+        .preview-paragraph {
+            font-size: 1.05rem;
+            font-weight: 300;
+            line-height: 1.7;
+            color: var(--color-text-light);
+            transition: color 0.4s ease;
+        }
+
+        /* Schweizer Ausbaustandard Showcase */
+        .materials-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .material-card {
+            background-color: var(--color-card-bg);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius);
+            padding: 32px;
+            box-shadow: var(--box-shadow-soft);
+            transition: var(--transition-smooth);
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .material-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--color-primary);
+            box-shadow: var(--box-shadow-medium);
+        }
+
+        .material-icon-box {
+            width: 48px;
+            height: 48px;
+            background-color: rgba(176, 101, 72, 0.08);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-primary);
+            font-size: 1.25rem;
+            flex-shrink: 0;
+            transition: background-color 0.4s ease, color 0.4s ease;
+        }
+        
+        .brand-frenco .material-icon-box {
+            background-color: rgba(212, 149, 122, 0.08);
+        }
+        
+        .brand-rhenia .material-icon-box {
+            background-color: rgba(30, 58, 47, 0.08);
+        }
+
+        .material-text {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .material-title {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--color-text-core);
+            font-family: var(--font-serif);
+            font-style: var(--font-title-style);
+        }
+
+        .material-detail {
+            font-size: 0.85rem;
+            color: var(--color-text-light);
+            font-weight: 300;
+            line-height: 1.5;
+        }
+
+        .material-origin-tag {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--color-primary);
+            font-weight: 600;
+            margin-top: 6px;
+            transition: color 0.4s ease;
+        }
+
+        /* UI Preview Card & Button Showcase */
+        .ui-mockup-grid {
+            display: grid;
+            grid-template-columns: 380px 1fr;
+            gap: 64px;
+            align-items: flex-start;
+        }
+
+        .ui-block-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--color-primary);
+            font-weight: 600;
+            display: block;
+            margin-bottom: 16px;
+            transition: color 0.4s ease;
+        }
+
+        .ui-card {
+            background-color: var(--color-card-bg);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow-medium);
+            transition: var(--transition-smooth);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .ui-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 30px 60px rgba(37, 26, 21, 0.08);
+        }
+
+        .ui-card-image {
+            height: 220px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            padding: 16px;
+            transition: background-image 0.6s ease;
+        }
+
+        .ui-badge {
+            background-color: var(--color-primary);
+            color: #ffffff;
+            padding: 6px 12px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 50px;
+            display: inline-block;
+            transition: background-color 0.4s ease;
+        }
+
+        .ui-card-body {
+            padding: 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .ui-card-title {
+            font-family: var(--font-serif);
+            font-size: 1.45rem;
+            color: var(--color-text-core);
+            font-style: var(--font-title-style);
+            transition: font-family 0.6s ease, font-style 0.6s ease, color 0.4s ease;
+        }
+
+        .ui-card-desc {
+            font-size: 0.85rem;
+            font-weight: 300;
+            color: var(--color-text-light);
+            margin: 0;
+            line-height: 1.55;
+            transition: color 0.4s ease;
+        }
+
+        .ui-card-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            border-top: 1px solid var(--color-border);
+            padding-top: 15px;
+            font-size: 0.75rem;
+            color: var(--color-text-light);
+            opacity: 0.9;
+            transition: border-color 0.4s ease, color 0.4s ease;
+        }
+
+        .meta-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 500;
+        }
+
+        .meta-item i {
+            color: var(--color-primary);
+            transition: color 0.4s ease;
+        }
+
+        .ui-card-btn {
+            background-color: var(--color-primary);
+            color: #ffffff;
+            border: none;
+            padding: 14px;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-family: var(--font-sans);
+            font-weight: 500;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: var(--transition-smooth);
+        }
+
+        .ui-card-btn:hover {
+            background-color: var(--color-secondary);
+            transform: translateY(-1px);
+        }
+
+        /* Button Showcase container */
+        .button-explanation-card {
+            background-color: var(--color-card-bg);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            box-shadow: var(--box-shadow-medium);
+            border: 1px solid var(--color-border);
+            transition: var(--transition-smooth);
+        }
+
+        .button-explanation-card h4 {
+            font-family: var(--font-sans);
+            font-weight: 600;
+            font-size: 1.5rem;
+            color: var(--color-primary);
+            margin-bottom: 12px;
+            transition: color 0.4s ease;
+        }
+
+        .btn-intro-text {
+            font-size: 0.95rem;
+            color: var(--color-text-light);
+            margin-bottom: 32px;
+            line-height: 1.6;
+        }
+
+        .showcase-buttons-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        .btn-showcase-item {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 32px;
+            align-items: center;
+            border-bottom: 1px solid var(--color-border);
+            padding-bottom: 24px;
+            transition: border-color 0.4s ease;
+        }
+
+        .btn-showcase-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .btn-column {
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .btn-info-column {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .btn-role {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--color-primary);
+            font-weight: 600;
+            transition: color 0.4s ease;
+        }
+
+        .btn-desc {
+            font-size: 0.85rem;
+            color: var(--color-text-light);
+            line-height: 1.4;
+            transition: color 0.4s ease;
+        }
+
+        /* Button elements styling in preview */
+        .btn-preview {
+            width: 100%;
+            padding: 12px 18px;
+            font-family: var(--font-sans);
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition-smooth);
+            border-radius: var(--border-radius);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Primary Button Showcase */
+        .btn-primary-preview {
+            background-color: var(--color-primary);
+            color: #ffffff;
+            border: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+        .btn-primary-preview:hover {
+            background-color: var(--color-secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Secondary Button Showcase */
+        .btn-secondary-preview {
+            background-color: transparent;
+            color: var(--color-text-core);
+            border: 2px solid var(--color-secondary);
+        }
+        .btn-secondary-preview:hover {
+            background-color: var(--color-secondary);
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Accent Button Showcase */
+        .btn-accent-preview {
+            background-color: var(--color-accent);
+            color: #ffffff;
+            border: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+        .btn-accent-preview:hover {
+            background-color: var(--color-primary);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Sektion: Darstellung des Brandingnamens */
+        .branding-name-card {
+            background-color: var(--color-card-bg);
+            border-radius: var(--border-radius);
+            padding: 64px 32px;
+            box-shadow: var(--box-shadow-soft);
+            border: 1px solid var(--color-border);
+            text-align: center;
+            transition: var(--transition-smooth);
+        }
+
+        .branding-name-inner {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .branding-category {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--color-primary);
+            font-weight: 600;
+            transition: color 0.4s ease;
+        }
+
+        .branding-name-large {
+            font-size: 4rem;
+            letter-spacing: 4px;
+            line-height: 1.1;
+            color: var(--color-primary);
+            font-family: var(--font-serif);
+            font-style: var(--font-title-style);
+            transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .branding-slogan-line {
+            width: 60px;
+            height: 1px;
+            background-color: var(--color-primary);
+            margin: 8px 0;
+            transition: background-color 0.4s ease;
+        }
+
+        .branding-slogan {
+            font-size: 1.25rem;
+            font-weight: 300;
+            color: var(--color-text-light);
+            letter-spacing: 1px;
+            font-style: var(--font-title-style);
+            transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        /* Toast notification */
+        .toast {
+            position: fixed;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background-color: var(--color-primary);
+            color: #ffffff;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            z-index: 10000;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s, background-color 0.4s ease;
+            opacity: 0;
+            pointer-events: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .toast i {
+            color: #ffffff;
+            opacity: 0.8;
+        }
+
+        .toast.show {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+
+        /* Footer */
+        #moodboard-footer {
+            background-color: var(--color-primary);
+            color: rgba(255, 255, 255, 0.6);
+            padding: 40px 0;
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(251, 250, 247, 0.05);
+            margin-top: 80px;
+            transition: background-color 0.6s ease;
+        }
+
+        .footer-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            opacity: 0.9;
+        }
+        
+        .footer-flex a {
+            color: #ffffff;
+            text-decoration: underline;
+            opacity: 0.8;
+            transition: opacity 0.2s ease;
+        }
+        
+        .footer-flex a:hover {
+            opacity: 1;
+        }
+
+        /* Responsive styling */
+        @media (max-width: 1024px) {
+            .hero-content-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+            .colors-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .typo-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .ui-mockup-grid {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+            .ui-card {
+                max-width: 380px;
+                margin: 0 auto;
+            }
+            .materials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-top: 140px;
+            }
+            
+            #moodboard-header {
+                height: auto;
+                padding: 16px 0;
+            }
+            
+            .header-flex {
+                flex-direction: column;
+                gap: 16px;
+                text-align: center;
+            }
+            
+            .variant-switcher {
+                width: 100%;
+                overflow-x: auto;
+                justify-content: center;
+            }
+            
+            .header-switcher-btn {
+                padding: 8px 16px;
+                font-size: 0.8rem;
+                white-space: nowrap;
+            }
+            
+            .hero-main-title {
+                font-size: 2.25rem;
+            }
+            
+            .colors-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .typography-card, .button-explanation-card {
+                padding: 24px;
+            }
+            
+            .btn-showcase-item {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+            
+            .branding-name-large {
+                font-size: 2.5rem;
+            }
+            
+            .footer-flex {
+                flex-direction: column;
+                gap: 12px;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 580px) {
+            .colors-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body class="brand-aurelia">
+
+    <!-- Header mit Varianten-Switcher (Sticky Hilfsnavigation) -->
+    <header id="moodboard-header">
+        <div class="container header-flex">
+            <div class="brand-info">
+                <h1 class="brand-name" id="header-brand-title">Aurelia</h1>
+                <span class="sub">IMMOBILIEN BRANDING MOODBOARDS</span>
+            </div>
+            
+            <!-- Der interaktive Switcher -->
+            <div class="variant-switcher" role="tablist">
+                <button class="header-switcher-btn active" data-variant="AURELIA" role="tab" aria-selected="true" id="tab-v1">
+                    <span class="num">01</span>
+                    <span class="name">Aurelia (Sonnenseite)</span>
+                </button>
+                <button class="header-switcher-btn" data-variant="FRENCO" role="tab" aria-selected="false" id="tab-v2">
+                    <span class="num">02</span>
+                    <span class="name">Frenco (Urbaner Puls)</span>
+                </button>
+                <button class="header-switcher-btn" data-variant="RHENIA" role="tab" aria-selected="false" id="tab-v3">
+                    <span class="num">03</span>
+                    <span class="name">Rhenia (Freiraum fliesst)</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 1. Hero-Bereich mit Einleitung und integriertem Konzeptkarten-Switcher -->
+    <section id="mood-hero">
+        <div class="hero-bg-overlay"></div>
+        <div class="container hero-wrapper">
+            <span class="badge hero-badge">Neubau Wohn- und Gewerbehaus — Rheinstrasse Frenkendorf</span>
+            <h1 class="hero-main-title">Architektur im Einklang mit <br><span class="text-accent" id="hero-dynamic-title">Marke & Haptik</span></h1>
+            
+            <div class="hero-content-grid">
+                <!-- Linke Spalte: Visualisierung & Einleitung -->
+                <div class="hero-intro-card">
+                    <div class="hero-visual-wrapper">
+                        <img src="assets/aurelia_moodboard.png" alt="Aurelia - Wohnen an der Sonnenseite" id="mood-main-image">
+                    </div>
+                    <div class="hero-intro-text">
+                        <span class="badge" id="intro-badge">Variante 01 // Favorit</span>
+                        <h2 id="intro-title" style="color: #ffffff; margin-bottom: 8px; font-size: 1.6rem; font-family: var(--font-serif);">Aurelia</h2>
+                        <p id="intro-lead" style="color: rgba(255, 255, 255, 0.85); font-size: 0.95rem; line-height: 1.5; font-weight: 300;">Erdige Geborgenheit, warmes Licht und dezenter, zeitloser Stil. Weiche Schatten fallen über die Terrassendielen aus geölter Eiche, während die Abendsonne sich warm auf der mineralischen Terrakotta-Fassade spiegelt.</p>
+                        
+                        <div class="tag-container" id="intro-tags">
+                            <!-- Wird dynamisch befüllt -->
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Rechte Spalte: Konzeptauswahl -->
+                <div class="hero-selector-column">
+                    <h3 class="selector-title">Markenkonzept wählen:</h3>
+                    <div class="concept-cards-stack">
+                        <!-- Karte 1: Aurelia -->
+                        <div class="concept-card active" data-variant="AURELIA" id="card-v1">
+                            <div class="card-header">
+                                <span class="card-num">01</span>
+                                <h4>Aurelia (Sonnenseite)</h4>
+                            </div>
+                            <p class="card-desc">Logenplatz auf der Sonnenseite. Warmes mineralisches Terrakotta-Beige, dunkler Mokka und filigrane Bronze.</p>
+                            <div class="card-visuals">
+                                <div class="card-colors">
+                                    <span class="dot" style="background-color: #b06548;" title="Bronze"></span>
+                                    <span class="dot" style="background-color: #5c4a42;" title="Mokka"></span>
+                                    <span class="dot" style="background-color: #a17163;" title="Terrakotta"></span>
+                                </div>
+                                <span class="card-font">Cormorant / Inter</span>
+                            </div>
+                            <span class="card-status-badge">Unser Favorit</span>
+                        </div>
+                        
+                        <!-- Karte 2: Frenco -->
+                        <div class="concept-card" data-variant="FRENCO" id="card-v2">
+                            <div class="card-header">
+                                <span class="card-num">02</span>
+                                <h4>Frenco (Urbaner Puls)</h4>
+                            </div>
+                            <p class="card-desc">Urbaner Rhythmus. Heller Eichenparkett, markanter Sichtbeton und glänzende Kupfer-Akzente.</p>
+                            <div class="card-visuals">
+                                <div class="card-colors">
+                                    <span class="dot" style="background-color: #d4957a;" title="Kupfer Hell"></span>
+                                    <span class="dot" style="background-color: #4a5c4e;" title="Waldgrau"></span>
+                                    <span class="dot" style="background-color: #8ab396;" title="Salbei"></span>
+                                </div>
+                                <span class="card-font">Outfit / Inter</span>
+                            </div>
+                        </div>
+
+                        <!-- Karte 3: Rhenia -->
+                        <div class="concept-card" data-variant="RHENIA" id="card-v3">
+                            <div class="card-header">
+                                <span class="card-num">03</span>
+                                <h4>Rhenia (Freiraum fliesst)</h4>
+                            </div>
+                            <p class="card-desc">Fliessende Eleganz. Harmonische Bepflanzung im L-Winkel-Hof, Naturstein und beruhigendes Salbeigrün.</p>
+                            <div class="card-visuals">
+                                <div class="card-colors">
+                                    <span class="dot" style="background-color: #1e3a2f;" title="Tiefgrün"></span>
+                                    <span class="dot" style="background-color: #5e8a69;" title="Salbei"></span>
+                                    <span class="dot" style="background-color: #a17163;" title="Terrakotta"></span>
+                                </div>
+                                <span class="card-font">Playfair / Montserrat</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Area -->
+    <main id="moodboard-content" class="container">
+
+        <!-- 2. Sektion: Die Marken-Farbpalette -->
+        <section class="mood-section" id="mood-colors">
+            <div class="section-header">
+                <h3>Die Farbpalette</h3>
+                <p>Abgeleitet aus den echten Materialien der Architektur und dem Projektumfeld. Klicken Sie auf ein Farbfeld, um den HEX-Code zu kopieren.</p>
+            </div>
+            
+            <div class="colors-grid" id="colors-container">
+                <div class="color-card" id="swatch-1" onclick="copyColorDynamic(1)">
+                    <div class="color-swatch">
+                        <span class="color-hex-tag">#b06548</span>
+                    </div>
+                    <div class="color-info">
+                        <span class="role">Hauptfarbe</span>
+                        <h4 class="color-name">Bronze Matt</h4>
+                        <p class="color-desc">-</p>
+                        <span class="color-origin">Origin</span>
+                    </div>
+                </div>
+                <div class="color-card" id="swatch-2" onclick="copyColorDynamic(2)">
+                    <div class="color-swatch">
+                        <span class="color-hex-tag">#5c4a42</span>
+                    </div>
+                    <div class="color-info">
+                        <span class="role">Sekundärfarbe</span>
+                        <h4 class="color-name">Mokka</h4>
+                        <p class="color-desc">-</p>
+                        <span class="color-origin">Origin</span>
+                    </div>
+                </div>
+                <div class="color-card" id="swatch-3" onclick="copyColorDynamic(3)">
+                    <div class="color-swatch">
+                        <span class="color-hex-tag">#a17163</span>
+                    </div>
+                    <div class="color-info">
+                        <span class="role">Akzentfarbe</span>
+                        <h4 class="color-name">Terrakotta-Beige</h4>
+                        <p class="color-desc">-</p>
+                        <span class="color-origin">Origin</span>
+                    </div>
+                </div>
+                <div class="color-card" id="swatch-4" onclick="copyColorDynamic(4)">
+                    <div class="color-swatch">
+                        <span class="color-hex-tag">#f7f4ef</span>
+                    </div>
+                    <div class="color-info">
+                        <span class="role">Hintergrund hell</span>
+                        <h4 class="color-name">Sandstein Off-White</h4>
+                        <p class="color-desc">-</p>
+                        <span class="color-origin">Origin</span>
+                    </div>
+                </div>
+                <div class="color-card" id="swatch-5" onclick="copyColorDynamic(5)">
+                    <div class="color-swatch">
+                        <span class="color-hex-tag">#251a15</span>
+                    </div>
+                    <div class="color-info">
+                        <span class="role">Kontrastfarbe</span>
+                        <h4 class="color-name">Espresso</h4>
+                        <p class="color-desc">-</p>
+                        <span class="color-origin">Origin</span>
+                    </div>
+                </div>
+                <div class="color-card" id="swatch-6" onclick="copyColorDynamic(6)">
+                    <div class="color-swatch">
+                        <span class="color-hex-tag">#251a15</span>
+                    </div>
+                    <div class="color-info">
+                        <span class="role">Textfarbe</span>
+                        <h4 class="color-name">Espresso Text</h4>
+                        <p class="color-desc">-</p>
+                        <span class="color-origin">Origin</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Sektion: Das typografische Konzept -->
+        <section class="mood-section" id="mood-typography">
+            <div class="section-header">
+                <h3>Das typografische Konzept</h3>
+                <p>Das Schriftsystem prägt den gestalterischen und architektonischen Charakter der Marke.</p>
+            </div>
+            
+            <div class="typography-card">
+                <div class="typo-grid">
+                    <div class="typo-specimen">
+                        <span class="typo-label">Überschriften (Title Font)</span>
+                        <h4 id="typo-title-font-name">Cormorant Garamond</h4>
+                        <div class="specimen-display">
+                            <span class="specimen-large" id="typo-specimen-large">Aa</span>
+                            <span class="specimen-alphabet" id="typo-specimen-alphabet">A B C D E F G H I J K L M N O P Q R S T U V W X Y Z<br>a b c d e f g h i j k l m n o p q r s t u v w x y z</span>
+                        </div>
+                    </div>
+                    <div class="typo-preview">
+                        <span class="typo-label">Live-Schriftmuster</span>
+                        <h3 class="preview-headline" id="typo-preview-headline">Ihr Logenplatz auf der Sonnenseite.</h3>
+                        <p class="preview-paragraph" id="typo-preview-paragraph">Der offene Wohnbereich öffnet sich barrierefrei über grosszügige Hebe-Schiebetüren zur windgeschützten Terrasse. Warmes Abendlicht flutet den weichen Eichenparkett und schafft vollendete Ruhe.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Sektion: Schweizer Ausbaustandard & Materialität -->
+        <section class="mood-section" id="mood-materials">
+            <div class="section-header">
+                <h3>Schweizer Ausbaustandard</h3>
+                <p>Die physische Haptik des Wohnprojekts – haptisch, natürlich und wertbeständig materialisiert.</p>
+            </div>
+            
+            <div class="materials-grid">
+                <!-- Wand- & Fassadenhülle -->
+                <div class="material-card">
+                    <div class="material-icon-box"><i class="fa-solid fa-layer-group"></i></div>
+                    <div class="material-text">
+                        <h4 class="material-title" id="mat-title-1">Gebäudehülle & Aussenputz</h4>
+                        <p class="material-detail" id="mat-desc-1">Körniger, mineralischer Putz im warmen Terrakotta-Beige. Der matte Anstrich gibt dem Gebäudewinkel eine weiche, solide Tiefe und fügt sich harmonisch in die Umgebung ein.</p>
+                        <span class="material-origin-tag" id="mat-origin-1">Gebäude-Fassade</span>
+                    </div>
+                </div>
+
+                <!-- Fenster & Metallprofile -->
+                <div class="material-card">
+                    <div class="material-icon-box"><i class="fa-solid fa-border-all"></i></div>
+                    <div class="material-text">
+                        <h4 class="material-title" id="mat-title-2">Fenster & Geländerprofile</h4>
+                        <p class="material-detail" id="mat-desc-2">Filigrane Geländerstäbe aus matt bronzenem Metall, kombiniert mit tief mokkafarbenen Holz-Metall-Fensterrahmen für präzise Konturen und eine edle Aussenwirkung.</p>
+                        <span class="material-origin-tag" id="mat-origin-2">Balkone & Fassadendetails</span>
+                    </div>
+                </div>
+
+                <!-- Boden & Haptik Innenbereich -->
+                <div class="material-card">
+                    <div class="material-icon-box"><i class="fa-solid fa-tree"></i></div>
+                    <div class="material-text">
+                        <h4 class="material-title" id="mat-title-3">Innenböden & Haptik</h4>
+                        <p class="material-detail" id="mat-desc-3">Hochwertige Eiche-Breitdielen im Wohn- und Essbereich, natur geölt und leicht gebürstet für ein unverfälschtes, warmes Barfuss-Wohngefühl über der Bodenheizung.</p>
+                        <span class="material-origin-tag" id="mat-origin-3">Wohnräume & Schlafzimmer</span>
+                    </div>
+                </div>
+
+                <!-- Küche & Badnasszellen -->
+                <div class="material-card">
+                    <div class="material-icon-box"><i class="fa-solid fa-sink"></i></div>
+                    <div class="material-text">
+                        <h4 class="material-title" id="mat-title-4">Küche & Nasszellen-Platten</h4>
+                        <p class="material-detail" id="mat-desc-4">Nasszellen ausgelegt mit grossformatigen Travertin- oder Muschelkalkplatten. Küchenabdeckungen aus feinem, unempfindlichem dunkelbraunem Quarzitstein.</p>
+                        <span class="material-origin-tag" id="mat-origin-4">Ausbau Küche & Bäder</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Sektion: Beispiel-Sektion mit Live UI- & Button-Vorschau -->
+        <section class="mood-section" id="mood-ui">
+            <div class="section-header">
+                <h3>Live UI- & Button-Vorschau</h3>
+                <p>Dieses interaktive Mockup zeigt die präzise Übersetzung der Brand-Elemente in eine moderne Schweizer Immobilienwebseite.</p>
+            </div>
+            
+            <div class="ui-mockup-grid">
+                <!-- A. Die digitale Projektkarte -->
+                <div class="ui-card-wrapper">
+                    <span class="ui-block-label">Digitale Anwendung (Wohnungskarte)</span>
+                    <div class="ui-card" id="preview-ui-card">
+                        <div class="ui-card-image" style="background-image: url('assets/innenraum_eigentum.png');" id="ui-card-bg">
+                            <span class="ui-badge brand-name" id="ui-card-badge">AURELIA</span>
+                        </div>
+                        <div class="ui-card-body">
+                            <h4 class="ui-card-title" id="ui-card-title">4.5 ZWG (Regelgeschoss)</h4>
+                            <p class="ui-card-desc" id="ui-card-desc">Grosszügige Wohnung mit master-suite und Bad en suite. Fliessende Räume führen barrierefrei direkt zur 72.4 m² grossen Südwest-Terrasse mit maximaler Besonnung.</p>
+                            
+                            <div class="ui-card-meta">
+                                <span class="meta-item"><i class="fa-solid fa-expand"></i> <span id="ui-meta-area">121.6 m² Wohnfläche</span></span>
+                                <span class="meta-item"><i class="fa-solid fa-mountain-sun"></i> <span id="ui-meta-terrace">72.4 m² Sonnenterrasse</span></span>
+                            </div>
+                            
+                            <button class="ui-card-btn" id="simulate-click-btn">
+                                <span>Verkaufsdokumentation</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- B. Das physische Button-Showcase (Primary, Secondary, Accent) -->
+                <div class="button-showcase-container">
+                    <span class="ui-block-label">Digitale Button-Strukturen (0px Radius)</span>
+                    <div class="button-explanation-card">
+                        <h4>Architektur im Interface</h4>
+                        <p class="btn-intro-text">Unsere Tasten verzichten auf Rundungen und spiegeln die L-förmige, solide Gebäudeform wider. Direkt aus den haptischen Baustoffen abgeleitet:</p>
+                        
+                        <div class="showcase-buttons-stack">
+                            <!-- Primary Button -->
+                            <div class="btn-showcase-item">
+                                <div class="btn-column">
+                                    <button class="btn-preview btn-primary-preview" id="btn-primary-label">Exposé anfordern</button>
+                                </div>
+                                <div class="btn-info-column">
+                                    <span class="btn-role">Primary Button</span>
+                                    <p class="btn-desc" id="btn-primary-desc">Dunkler Bronzeton der Balkongeländer. Warm, extrem kontrastreich auf Sandstein-Off-White.</p>
+                                </div>
+                            </div>
+
+                            <!-- Secondary Button -->
+                            <div class="btn-showcase-item">
+                                <div class="btn-column">
+                                    <button class="btn-preview btn-secondary-preview" id="btn-secondary-label">Grundrisse ansehen</button>
+                                </div>
+                                <div class="btn-info-column">
+                                    <span class="btn-role">Secondary Button</span>
+                                    <p class="btn-desc" id="btn-secondary-desc">Feine Mokka-Umrandung. Zurückhaltend elegant für ergänzende Informationen.</p>
+                                </div>
+                            </div>
+
+                            <!-- Accent Button -->
+                            <div class="btn-showcase-item">
+                                <div class="btn-column">
+                                    <button class="btn-preview btn-accent-preview" id="btn-accent-label">Einheiten anzeigen</button>
+                                </div>
+                                <div class="btn-info-column">
+                                    <span class="btn-role">Accent Button</span>
+                                    <p class="btn-desc" id="btn-accent-desc">Warmer Terrakotta-Fassadenton. Setzt die Highlights auf den interaktiven Wohnungsspiegel.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Sektion: Darstellung des Brandingnamens -->
+        <section class="mood-section" id="mood-branding-showcase">
+            <div class="section-header">
+                <h3>Offizielle Wortmarke</h3>
+                <p>Das harmonisierte visuelle Statement mit der zugehörigen typografischen Wortmarke und dem Projektslogan.</p>
+            </div>
+            
+            <div class="branding-name-card">
+                <div class="branding-name-inner">
+                    <span class="branding-category">Wortmarke & Slogan</span>
+                    <h2 class="branding-name-large brand-name" id="brand-showcase-name">Aurelia</h2>
+                    <div class="branding-slogan-line"></div>
+                    <p class="branding-slogan" id="brand-showcase-slogan">Ihr Logenplatz auf der Sonnenseite.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Toast-Meldung für Farbkopie -->
+    <div id="toast" class="toast">
+        <i class="fa-solid fa-clipboard-check"></i>
+        <span id="toast-text">Farbcode kopiert!</span>
+    </div>
+
+    <!-- Footer -->
+    <footer id="moodboard-footer">
+        <div class="container footer-flex">
+            <p>&copy; 2026 <span class="brand-name">Aurelia</span> — Rheinstrasse Frenkendorf. Alle Rechte vorbehalten.</p>
+            <p>Schweizer Immobilienbranding &bull; Design im Stil <a href="Github_Moodboard/index.html">Github_Moodboard</a></p>
+        </div>
+    </footer>
+
+    <!-- Clipboard & Dynamic Morphic Switching Script -->
+    <script>
+        // --- 1. Die morphische Branding-Datenbank f&uuml;r Frenkendorf (Aurelia, Frenco, Rhenia) ---
+        const brandingData = {
+            'AURELIA': {
+                badge: 'Variante 01 // Favorit',
+                title: 'Aurelia',
+                lead: 'Erdige Geborgenheit, warmes Licht und dezenter, zeitloser Stil. Weiche Schatten fallen über die Terrassendielen aus geölter Eiche, während die Abendsonne sich warm auf der mineralischen Terrakotta-Fassade spiegelt.',
+                brandName: 'Aurelia',
+                brandSlogan: 'Ihr Logenplatz auf der Sonnenseite.',
+                tags: ['Stockwerkeigentum', 'Sonnige Terrassen', 'Quiet Luxury', 'Bronze & Terrakotta'],
+                titleFont: 'Cormorant Garamond',
+                specimenLarge: 'Aa',
+                specimenAlphabet: 'A B C D E F G H I J K L M N O P Q R S T U V W X Y Z<br>a b c d e f g h i j k l m n o p q r s t u v w x y z',
+                previewHeadline: 'Ihr Logenplatz auf der Sonnenseite.',
+                previewParagraph: 'Der offene Wohnbereich öffnet sich barrierefrei über grosszügige Hebe-Schiebetüren zur windgeschützten Terrasse. Warmes Abendlicht flutet den weichen Eichenparkett und schafft vollendete Ruhe.',
+                
+                // Visualisierungs-Pfade
+                mainImage: 'assets/aurelia_moodboard.png',
+                cardImage: 'assets/innenraum_eigentum.png',
+                cardTitle: '4.5 ZWG (Regelgeschoss)',
+                cardDesc: 'Grosszügige Wohnung mit master-suite und Bad en suite. Fliessende Räume führen barrierefrei direkt zur 72.4 m² grossen Südwest-Terrasse mit maximaler Besonnung.',
+                metaArea: '121.6 m² Wohnfläche',
+                metaTerrace: '72.4 m² Sonnenterrasse',
+
+                // Schweizer Ausbaustandard Haptik-Texte
+                materials: {
+                    t1: 'Gebäudehülle & Aussenputz',
+                    d1: 'Körniger, mineralischer Putz im warmen Terrakotta-Beige. Der matte Anstrich gibt dem Gebäudewinkel eine weiche, solide Tiefe und fügt sich harmonisch in die Umgebung ein.',
+                    o1: 'Gebäude-Fassade (Aurelia)',
+                    
+                    t2: 'Fenster & Geländerprofile',
+                    d2: 'Filigrane Geländerstäbe aus matt bronzenem Metall, kombiniert mit tief mokkafarbenen Holz-Metall-Fensterrahmen für präzise Konturen und eine edle Aussenwirkung.',
+                    o2: 'Balkone & Fassadendetails',
+                    
+                    t3: 'Innenböden & Haptik',
+                    d3: 'Hochwertige Eiche-Breitdielen im Wohn- und Essbereich, natur geölt und leicht gebürstet für ein unverfälschtes, warmes Barfuss-Wohngefühl über der Bodenheizung.',
+                    o3: 'Wohnräume & Schlafzimmer',
+                    
+                    t4: 'Küche & Nasszellen-Platten',
+                    d4: 'Nasszellen ausgelegt mit grossformatigen Travertin- oder Muschelkalkplatten. Küchenabdeckungen aus feinem, unempfindlichem dunkelbraunem Quarzitstein.',
+                    o4: 'Ausbau Küche & Bäder'
+                },
+
+                // Buttons Showcase Descriptions
+                buttons: {
+                    primary: { desc: 'Dunkler Bronzeton der Balkongeländer. Warm, extrem kontrastreich auf Sandstein-Off-White.' },
+                    secondary: { desc: 'Feine Mokka-Umrandung. Zurückhaltend elegant für ergänzende Informationen.' },
+                    accent: { desc: 'Warmer Terrakotta-Fassadenton. Setzt die Highlights auf den interaktiven Wohnungsspiegel.' }
+                },
+                
+                // Farbpalette
+                colors: [
+                    { name: 'Bronze Matt', hex: '#b06548', role: 'Hauptfarbe (Primary)', desc: 'Gewonnen aus den feinen Balkongeländern und Handläufen. Mattgold glänzendes Metalldetail.', origin: 'Balkongeländer & Details' },
+                    { name: 'Mokka Graubraun', hex: '#5c4a42', role: 'Sekundärfarbe (Secondary)', desc: 'Erdiges, dunkles Braungrau von der Fensterrahmenkonstruktion für strukturelle Details.', origin: 'Holz-Metall-Fensterprofile' },
+                    { name: 'Terrakotta-Beige', hex: '#a17163', role: 'Akzentfarbe (Accent)', desc: 'Die reale mineralische Fassadenfarbe des L-Winkels. Bildet den harmonischen Hauptakzent.', origin: 'Mineral-Aussenputz' },
+                    { name: 'Sandstein Off-White', hex: '#f7f4ef', role: 'Hintergrund hell', desc: 'Sanfter Hintergrundton statt sterilem Reinweiss. Angelehnt an hellen Muschelkalk.', origin: 'Travertin & Innenabrieb' },
+                    { name: 'Espresso-Schwarz', hex: '#251a15', role: 'Kontrastfarbe', desc: 'Edles, tiefdunkles Braun aus Astanteilen des geölten Eichenparketts und Quarzitküchenplatten.', origin: 'Quarzitabdeckungen & Holz' },
+                    { name: 'Espresso Text', hex: '#251a15', role: 'Textfarbe (Core Text)', desc: 'Bietet einen warmen Kontrast für lange Texte bei exzellenter Barrierefreiheit.', origin: 'Mittelbereich Eichenholz' }
+                ]
+            },
+            'FRENCO': {
+                badge: 'Variante 02 // Urbaner Puls',
+                title: 'Frenco',
+                lead: 'Klar, urban, kontrastreich und lebendig. Sichtbetonwände, helle Eichendielen und einfallendes helles Morgenlicht setzen den Wohn- und Essbereich zeitgemäss in Szene. Klares Schweizer Handwerk.',
+                brandName: 'Frenco',
+                brandSlogan: 'Das neue Herz an der Rheinstrasse.',
+                tags: ['Urbane Konnektivität', '13 Min. nach Basel', 'Beton & Eiche', 'Zentrales Wohnen'],
+                titleFont: 'Outfit',
+                specimenLarge: 'Aa',
+                specimenAlphabet: 'A B C D E F G H I J K L M N O P Q R S T U V W X Y Z<br>a b c d e f g h i j k l m n o p q r s t u v w x y z',
+                previewHeadline: '13 S-Bahn-Minuten bis Basel SBB.',
+                previewParagraph: 'Das Leben im Zentrum von Frenkendorf bedeutet kurze Wege: Einkaufen im Haus, Schulen um die Ecke, und die Schnellverbindung in den Basler Kultur- und Wirtschaftspuls.',
+                
+                // Visualisierungs-Pfade
+                mainImage: 'assets/frenco_moodboard.png',
+                cardImage: 'assets/fassade_aussen.png',
+                cardTitle: '3.5 ZWG (2. Obergeschoss)',
+                cardDesc: 'Modernes Layout mit grosszügigem Sichtbeton-Detail. Optimal organisierter Grundriss nahe dem Bahnhof, ideal für vielbeschäftigte Berufspendler.',
+                metaArea: '95.6 m² Wohnfläche',
+                metaTerrace: '32.4 m² Terrasse',
+
+                // Schweizer Ausbaustandard Haptik-Texte
+                materials: {
+                    t1: 'Modernes Wandfinish',
+                    d1: 'Ausgewählte Sichtbetonflächen im Wohnbereich sorgen für urbanen Loftcharakter. Ergänzt durch feinen weissen Kalkgipsputz für optimale Helligkeit.',
+                    o1: 'Wohnwände (Frenco)',
+                    
+                    t2: 'Metall- & Portalbauteile',
+                    d2: 'Pulverbeschichtete Aluminiumbeschläge in eloxiertem Anthrazit und Akzente aus glänzendem Kupferblech, abgeleitet von den modernen Fensterrahmen.',
+                    o2: 'Rahmen & Anschlüsse',
+                    
+                    t3: 'Bodenbelag Holz',
+                    d3: 'Helles Eichenparkett, matt versiegelt für einen strapazierfähigen, zeitgemässen Stil. Reflektiert das einfallende Morgenlicht ideal in die Tiefe des Raumes.',
+                    o3: 'Wohn- und Schlafböden',
+                    
+                    t4: 'Küchenarbeitsplatte',
+                    d4: 'Massive Arbeitsplatte aus bruchfestem Quarzit in dunklem Anthrazit. Schrankfronten in minimalistisch mattem Mokka-Grau.',
+                    o4: 'Küchendesign'
+                },
+
+                // Buttons Showcase Descriptions
+                buttons: {
+                    primary: { desc: 'Leuchtendes Kupfer-Orange. Extravagant, urban und dynamisch konzipiert.' },
+                    secondary: { desc: 'Waldgraues Profil. Perfekt auf Sichtbeton und weisse Wände abgestimmt.' },
+                    accent: { desc: 'Frisches Salbeigrün. Zieht den Blick gezielt auf grüne Akzente und Freiflächen.' }
+                },
+                
+                // Farbpalette
+                colors: [
+                    { name: 'Kupfer Hell', hex: '#d4957a', role: 'Hauptfarbe (Primary)', desc: 'Warmer, rotgold glänzender Ton. Gewonnen aus den kupferfarbenen Lukarnenelementen.', origin: 'Dachkupfer & Details' },
+                    { name: 'Waldgrau', hex: '#4a5c4e', role: 'Sekundärfarbe (Secondary)', desc: 'Kühles Graugrün aus Betonschatten und umgebendem Laubwerk für zeitlose Gliederung.', origin: 'Sichtbeton & Aussenwerk' },
+                    { name: 'Salbei Hell', hex: '#8ab396', role: 'Akzentfarbe (Accent)', desc: 'Frischer Akzentton. Repräsentiert Vitalität, Wachstum und die Wiesen im Ergolztal.', origin: 'Innenhof-Bepflanzung' },
+                    { name: 'Mineral-Weiss', hex: '#f4f6f5', role: 'Hintergrund hell', desc: 'Minimalistisch kühles Kalkweiss mit minimalem Graustich für moderne Ästhetik.', origin: 'Wandabrieb weiss' },
+                    { name: 'Graphit-Anthrazit', hex: '#1e2229', role: 'Kontrastfarbe', desc: 'Dunkler Schieferton für Fenster-Strukturen und kontrastreiche UI-Elemente.', origin: 'Fensterprofile aussen' },
+                    { name: 'Graphit Text', hex: '#1e2229', role: 'Textfarbe (Core Text)', desc: 'Absolut scharfer, kühler Textkontrast für bestmögliche Lesbarkeit auf Bildschirmen.', origin: 'Fensterrahmen-Schatten' }
+                ]
+            },
+            'RHENIA': {
+                badge: 'Variante 03 // Flissende Hofoase',
+                title: 'Rhenia',
+                lead: 'Naturverbunden, organisch und flissend. Die geschützte L-Form des Gebäudes bildet eine friedliche Oase, deren begrünter Innenhof mit Gräsern, Birken und Naturstein harmonisch mit den Wohnungen verschmilzt.',
+                brandName: 'Rhenia',
+                brandSlogan: 'Wo Freiraum und Leben fliessen.',
+                tags: ['Flissende Räume', 'Hofoase L-Winkel', 'Naturstein & Holz', 'Weinbergblick'],
+                titleFont: 'Playfair Display',
+                specimenLarge: 'Aa',
+                specimenAlphabet: 'A B C D E F G H I J K L M N O P Q R S T U V W X Y Z<br>a b c d e f g h i j k l m n o p q r s t u v w x y z',
+                previewHeadline: 'Die Natur vor der Haustür.',
+                previewParagraph: 'Rhenia bringt das weiche, grüne Ambiente der Ergolzauen und der Rebhänge direkt an Ihre Füsse. Die Architektur atmet Ruhe und lässt Raum für echtes Durchatmen.',
+                
+                // Visualisierungs-Pfade
+                mainImage: 'assets/rhenia_moodboard.png',
+                cardImage: 'assets/innenraum_eigentum.png',
+                cardTitle: '5.5 ZWG (Attikawohnung WE 18)',
+                cardDesc: 'Erstklassige Attika-Residenz mit gigantischer 141.7 m² umlaufender Terrasse. Fliessender Wohnkomfort, en-suite Ankleide und sensationeller Ausblick.',
+                metaArea: '141.7 m² Wohnfläche',
+                metaTerrace: '141.7 m² Dachterrasse',
+
+                // Schweizer Ausbaustandard Haptik-Texte
+                materials: {
+                    t1: 'Fassadenverkleidung',
+                    d1: 'Kombination aus mineralischem Kratzputz und vertikaler Holzschalung aus heller Esche im windgeschützten Hofbereich zur Unterstützung der Naturstimmung.',
+                    o1: 'Hof-Fassaden (Rhenia)',
+                    
+                    t2: 'Terrassenbelag',
+                    d2: 'Grossformatige Zementplatten auf Stelzlagern für die grossen Terrassen. Filigrane Stabgeländer aus warm glänzendem Bronzeblech für sichere Eleganz.',
+                    o2: 'Aussenterrassen',
+                    
+                    t3: 'Holzwerk Innenbereich',
+                    d3: 'Weich geschliffenes Eschenholz für Treppenstufen, Einbauschränke und Schiebetüren. Verleiht den grossen Räumen ein organisches Fluten.',
+                    o3: 'Holz-Ausbauten',
+                    
+                    t4: 'Badezimmer-Ausstattung',
+                    d4: 'Feinstes Muschelkalk-Feinsteinzeug in beigen Platten. PVD-beschichtete Badezimmerarmaturen in warmem Bronze-Kupfer-Finish.',
+                    o4: 'Bäder & Armaturen'
+                },
+
+                // Buttons Showcase Descriptions
+                buttons: {
+                    primary: { desc: 'Tiefes Waldgrün. Elegant, naturnah und extrem beruhigend für das Auge.' },
+                    secondary: { desc: 'Salbeigrünes Band. Wirkt absolut harmonisch und organisch eingebettet.' },
+                    accent: { desc: 'Erdiges Terrakotta. Schlägt die Brücke zur äusseren wärmenden Putzfassade.' }
+                },
+                
+                // Farbpalette
+                colors: [
+                    { name: 'Tiefes Waldgrün', hex: '#1e3a2f', role: 'Hauptfarbe (Primary)', desc: 'Sattes, tiefdunkles Grün. Symbolisiert die waldige Kulisse der Schauenburger Fluh.', origin: 'Welcome Home Green' },
+                    { name: 'Salbeigrün', hex: '#5e8a69', role: 'Sekundärfarbe (Secondary)', desc: 'Gedämpfter, organisch flissender Ton. Erzeugt eine beruhigende Naturnähe.', origin: 'Ergolzauen & Rebhänge' },
+                    { name: 'Terrakotta-Akzent', hex: '#a17163', role: 'Akzentfarbe (Accent)', desc: 'Warmes, ziegeliges Terrakotta-Rot als perfekter warmer Akzent zur grünen Oase.', origin: 'Ziegel & Putz-Fassade' },
+                    { name: 'Muschelkalk-Beige', hex: '#e6ddcc', role: 'Hintergrund hell', desc: 'Warmer, naturnaher Sandton des Muschelkalks. Weich und extrem harmonisch.', origin: 'Muschelkalk & Platten' },
+                    { name: 'Bronze-Braun', hex: '#b06548', role: 'Kontrastfarbe', desc: 'Dunkler Bronzeton der äusseren Fensterprofile. Schafft das tragende Gerüst.', origin: 'Metall-Fensterrahmen' },
+                    { name: 'Mokka-Dunkel', hex: '#251a15', role: 'Textfarbe (Core Text)', desc: 'Tiefbrauner Espresso-Ton. Maximaler, warmer Textkontrast auf dem Naturstein-Beige.', origin: 'Dunkles Astholz' }
+                ]
+            }
+        };
+
+        // --- 2. Dynamic Morphic Rendering-Engine ---
+        function renderMoodboard(brandName) {
+            const data = brandingData[brandName];
+            if (!data) return;
+
+            // A. CSS Variables & Classes on Body
+            if (brandName === 'AURELIA') {
+                document.body.className = 'brand-aurelia';
+            } else if (brandName === 'FRENCO') {
+                document.body.className = 'brand-frenco';
+            } else {
+                document.body.className = 'brand-rhenia';
+            }
+
+            // B. Update Intro Section
+            const introBadge = document.getElementById('intro-badge');
+            const introTitle = document.getElementById('intro-title');
+            const introLead = document.getElementById('intro-lead');
+            const introTags = document.getElementById('intro-tags');
+            const moodMainImage = document.getElementById('mood-main-image');
+            
+            if (introBadge) introBadge.textContent = data.badge;
+            if (introTitle) introTitle.textContent = data.title;
+            if (introLead) introLead.textContent = data.lead;
+            if (moodMainImage) moodMainImage.src = data.mainImage;
+            
+            if (introTags) {
+                introTags.innerHTML = '';
+                data.tags.forEach(tagText => {
+                    const tagSpan = document.createElement('span');
+                    tagSpan.className = 'tag';
+                    tagSpan.textContent = tagText;
+                    introTags.appendChild(tagSpan);
+                });
+            }
+
+            // C. Update dynamic Brand Names across the page
+            document.querySelectorAll('.brand-name').forEach(el => {
+                el.textContent = data.brandName;
+            });
+            const headerBrandTitle = document.getElementById('header-brand-title');
+            if (headerBrandTitle) headerBrandTitle.textContent = data.brandName;
+
+            // D. Update Color Swatches
+            for (let i = 0; i < 6; i++) {
+                const swatchIdx = i + 1;
+                const card = document.getElementById(`swatch-${swatchIdx}`);
+                if (!card) continue;
+                
+                const colorItem = data.colors[i];
+                card.setAttribute('data-hex', colorItem.hex);
+                
+                const swatch = card.querySelector('.color-swatch');
+                if (swatch) {
+                    swatch.style.backgroundColor = colorItem.hex;
+                }
+                
+                const hexTag = card.querySelector('.color-hex-tag');
+                if (hexTag) hexTag.textContent = colorItem.hex;
+                
+                const nameEl = card.querySelector('.color-name');
+                if (nameEl) nameEl.textContent = colorItem.name;
+                
+                const descEl = card.querySelector('.color-desc');
+                if (descEl) descEl.textContent = colorItem.desc;
+                
+                const originEl = card.querySelector('.color-origin');
+                if (originEl) originEl.innerHTML = `<i class="fa-solid fa-mountain-sun"></i> ${colorItem.origin}`;
+            }
+
+            // E. Update Typo Specimen Card
+            const titleFontNameElement = document.getElementById('typo-title-font-name');
+            const specimenLarge = document.getElementById('typo-specimen-large');
+            const specimenAlphabet = document.getElementById('typo-specimen-alphabet');
+            const previewHeadline = document.getElementById('typo-preview-headline');
+            const previewParagraph = document.getElementById('typo-preview-paragraph');
+
+            if (titleFontNameElement) titleFontNameElement.textContent = data.titleFont;
+            if (specimenLarge) specimenLarge.textContent = data.specimenLarge;
+            if (specimenAlphabet) specimenAlphabet.innerHTML = data.specimenAlphabet;
+            if (previewHeadline) previewHeadline.textContent = data.previewHeadline;
+            if (previewParagraph) previewParagraph.textContent = data.previewParagraph;
+
+            // F. Update Schweizer Ausbaustandard Materials Texts
+            document.getElementById('mat-title-1').textContent = data.materials.t1;
+            document.getElementById('mat-desc-1').textContent = data.materials.d1;
+            document.getElementById('mat-origin-1').textContent = data.materials.o1;
+            
+            document.getElementById('mat-title-2').textContent = data.materials.t2;
+            document.getElementById('mat-desc-2').textContent = data.materials.d2;
+            document.getElementById('mat-origin-2').textContent = data.materials.o2;
+            
+            document.getElementById('mat-title-3').textContent = data.materials.t3;
+            document.getElementById('mat-desc-3').textContent = data.materials.d3;
+            document.getElementById('mat-origin-3').textContent = data.materials.o3;
+            
+            document.getElementById('mat-title-4').textContent = data.materials.t4;
+            document.getElementById('mat-desc-4').textContent = data.materials.d4;
+            document.getElementById('mat-origin-4').textContent = data.materials.o4;
+
+            // G. Update UI Preview Card details
+            const uiBg = document.getElementById('ui-card-bg');
+            const uiTitle = document.getElementById('ui-card-title');
+            const uiDesc = document.getElementById('ui-card-desc');
+            const uiMetaArea = document.getElementById('ui-meta-area');
+            const uiMetaTerrace = document.getElementById('ui-meta-terrace');
+            
+            if (uiBg) uiBg.style.backgroundImage = `url('${data.cardImage}')`;
+            if (uiTitle) uiTitle.textContent = data.cardTitle;
+            if (uiDesc) uiDesc.textContent = data.cardDesc;
+            if (uiMetaArea) uiMetaArea.textContent = data.metaArea;
+            if (uiMetaTerrace) uiMetaTerrace.textContent = data.metaTerrace;
+
+            // H. Update Button Showcase Descriptions
+            const btnPrimaryDesc = document.getElementById('btn-primary-desc');
+            const btnSecondaryDesc = document.getElementById('btn-secondary-desc');
+            const btnAccentDesc = document.getElementById('btn-accent-desc');
+
+            if (btnPrimaryDesc) btnPrimaryDesc.textContent = data.buttons.primary.desc;
+            if (btnSecondaryDesc) btnSecondaryDesc.textContent = data.buttons.secondary.desc;
+            if (btnAccentDesc) btnAccentDesc.textContent = data.buttons.accent.desc;
+
+            // I. Update Branding Name Showcase
+            const brandShowcaseName = document.getElementById('brand-showcase-name');
+            const brandShowcaseSlogan = document.getElementById('brand-showcase-slogan');
+            if (brandShowcaseName) brandShowcaseName.textContent = data.brandName;
+            if (brandShowcaseSlogan) brandShowcaseSlogan.textContent = data.brandSlogan;
+        }
+
+        // --- 3. Clipboard-Copy Logik ---
+        function copyColor(hex, name) {
+            navigator.clipboard.writeText(hex).then(() => {
+                const toast = document.getElementById('toast');
+                const toastText = document.getElementById('toast-text');
+                if (toast && toastText) {
+                    toastText.innerHTML = `Farbcode <strong>${hex}</strong> (${name}) kopiert!`;
+                    toast.classList.add('show');
+                    
+                    setTimeout(() => {
+                        toast.classList.remove('show');
+                    }, 2500);
+                }
+            }).catch(err => {
+                console.error('Fehler beim Kopieren: ', err);
+            });
+        }
+
+        function copyColorDynamic(index) {
+            const card = document.getElementById(`swatch-${index}`);
+            if (card) {
+                const hex = card.getAttribute('data-hex');
+                const name = card.querySelector('.color-name').textContent;
+                copyColor(hex, name);
+            }
+        }
+
+        // --- 4. Switcher-Logik (Synchronisiert beide Schaltflächengruppen) ---
+        function selectVariant(variantKey) {
+            // Update active state on top header switcher
+            document.querySelectorAll('.header-switcher-btn').forEach(btn => {
+                const active = btn.getAttribute('data-variant') === variantKey;
+                btn.classList.toggle('active', active);
+                btn.setAttribute('aria-selected', active ? 'true' : 'false');
+            });
+
+            // Update active state on right sidebar cards
+            document.querySelectorAll('.concept-card').forEach(card => {
+                const active = card.getAttribute('data-variant') === variantKey;
+                card.classList.toggle('active', active);
+            });
+
+            // Render page contents
+            renderMoodboard(variantKey);
+        }
+
+        // Setup Event Listeners
+        document.addEventListener('DOMContentLoaded', () => {
+            // Setup clicks for header switcher buttons
+            document.querySelectorAll('.header-switcher-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const variant = btn.getAttribute('data-variant');
+                    selectVariant(variant);
+                });
+            });
+
+            // Setup clicks for sidebar concept cards
+            document.querySelectorAll('.concept-card').forEach(card => {
+                card.addEventListener('click', () => {
+                    const variant = card.getAttribute('data-variant');
+                    selectVariant(variant);
+                });
+            });
+
+            // Initialize default view
+            selectVariant('AURELIA');
+        });
+    </script>
+</body>
+</html>
